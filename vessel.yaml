@@ -1,0 +1,381 @@
+1:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Dimension   : 4
+      Note        : N/A
+   - TYPE         :
+      Value       : vessel
+      Description : Component type (VESSEL left justified).
+      Type        : A14
+      Note        : N/A
+   - NUM          :
+      Value       : 0
+      Description : Component ID number (must be unique).
+      Type        : I14
+      Note        : N/A
+   - ID           : 
+      Value       : 0
+      Description : User ID number (arbitrary).
+      Type        : I14
+      Note        : N/A
+   - CTITLE       :
+      Value       : 0
+      Description : Hollerith component description.
+      Type        : A30
+      Note        : N/A
+2:
+   - General      :
+      Skipped     : True
+      Type        : Scalar
+      Dimension   : 2
+      Note        : Only Input if NAMELIST FLUIDS > 1
+   - EOS          :
+      Value       : N/A
+      Description : EOS identifier for this component.
+      Type        : A14
+      Note        : N/A
+   - PHASECHANGE  :
+      Value       : False
+      Description : >
+                     Phase change flag. True if change is allowed, 
+                     False otherwise.
+      Type        : A14
+      Note        : N/A
+3:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Dimension   : 5
+      Note        : N/A
+   - NASX         :
+      Value       : 0
+      Description : Number of axial (z-direction) cells (levels).
+      Type        : I14
+      Note        : N/A
+   - NRSX         :
+      Value       : 0
+      Description : >
+                     Number of radial (r-direction) cells (rings) or 
+                     x-direction cells. IGEOM (Word 1 Card Number 6) 
+                     defines cylindrical or Cartesian geometry.
+      Type        : I14
+      Note        : N/A
+   - NTSX         :
+      Value       : 0
+      Description : Number of azimuthal cells or y-direction.
+      Type        : I14
+      Note        : N/A
+   - NCSR         :
+      Value       : 0
+      Description : >
+                     Number of 1D Hydraulic-component (but not BREAK or 
+                     PLENUM component) junction connections to VESSEL-
+                     component cell interfaces. Each of the six VESSEL-
+                     cell interfaces can have any number of 1D hydraulic-
+                     component junction connections.
+      Type        : I14
+      Note        : N/A
+   - IVSSBF       :
+      Value       : 0
+      Description : >
+                     Axial boundary condition option. IVSSBF > 0 requires 
+                     additional input of level data for axial cells (levels) 
+                     0 and NASX+1 to define their constant FILL or BREAK 
+                     component cell boundary condition.
+                     
+                     The r- or x-directional or y-directional boundaries below 
+                     axial cell (level) 1 and above axial cell (level) NASX 
+                     are no-flow walls. 
+                     0 = No-flow wall below axial cell (level) 1 and above 
+                     axial cell (level) NASX. 
+                     2 = axial cell (level) 0 defines a FILL and axial cell 
+                     (level) NASX+1 defines a BREAK boundary condition.
+                     20 = axial cell (level) 0 defines a BREAK boundary 
+                     condition and axial cell (level) NASX+1 defines a FILL
+                     boundary condition.
+                     22 = both axial cells (levels) 0 and NASX+1 define a BREAK
+      Type        : I14
+      Note        : N/A
+4:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Dimension   : 5
+      Note        : N/A
+   - IDCU         : 
+      Value       : 0
+      Description : >
+                     Axial cell (level) number at which its upper interface 
+                     is the downcomer upper-boundary elevation. If no downcomer 
+                     is present, input IDCU = 0 (this is the necessary and 
+                     sufficient condition to indicate no downcomer is present 
+                     in the VESSEL component as far as TRACE setting downcomer-
+                     interface flow areas to zero internally).
+      Type        : I14
+      Note        : N/A
+   - IDCL         : 
+      Value       : 0
+      Description : >
+                     Axial cell (level) number at which its upper interface is 
+                     the downcomer lower-boundary elevation. If IDCU = 0, input 
+                     IDCL = 0.
+      Type        : I14
+      Note        : N/A
+   - IDCR         : 
+      Value       : 0
+      Description : >
+                     Radial cell (ring) number at which its outer interface is 
+                     the downcomer inner-radial boundary. If IDCU = 0, input 
+                     IDCR = 0.
+      Type        : I14
+      Note        : N/A
+   - ICRU         :
+      Value       : 0
+      Description : >
+                     Axial cell (level) number at which its upper interface is 
+                     the reactor-core region upper boundary elevation. If no 
+                     reactor-core region is present, input ICRU = 0.
+      Type        : I14
+      Note        : N/A
+   - ICRL         : 
+      Value       : 0
+      Description : >
+                     Axial cell (level) number at which its upper interface is 
+                     the reactor-core region lower boundary elevation. If no 
+                     reactor-core region is present, input ICRL = 0.
+      Type        : I14
+      Note        : N/A
+5:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Dimension   : 5
+      Note        : N/A
+   - ICRR         : 
+      Value       : 0
+      Description : >
+                     Radial cell (ring) number at which its outer interface 
+                     is the reactor-core outer-radial boundary. ICRR is used 
+                     to define the reactor-core region with ICRU and ICRL 
+                     as well as with ILCSP and IUCSP. If no reactor-core
+                     region is defined by both ICRU and ICRL as well ILCSP and 
+                     IUCSP, input ICRR = 0.
+      Type        : I14
+      Note        : N/A
+   - ILCSP        : 
+      Value       : 0
+      Description : >
+                     Axial cell (level) number at which its upper interface is 
+                     the core-region lower boundary support-plate elevation to 
+                     be used for evaluating graphic output. Defaults to the 
+                     value of ICRU (Word 5 on Card Number 4) if IUCSP = 0 is 
+                     input.
+      Type        : I14
+      Note        : N/A
+   - IUCSP        : 
+      Value       : 0
+      Description : >
+                     Axial cell (level) number at which its upper interface is 
+                     the core-region upper boundary support-plate elevation to 
+                     be used for evaluating graphics output. Defaults to the 
+                     value of ICRU (Word 4 on Card Number 4) if IUHP = 0 is 
+                     input.
+      Type        : I14
+      Note        : N/A
+   - IUHP         :
+      Value       : 0
+      Description : >
+                     Axial cell (level) at which its upper interface is 
+                     the upper-head support-plate elevation to be used for 
+                     evaluating graphics output. Defaults to the value of IDCU 
+                     (Word 1 on Card Number 4) if IUHP = 0 is input. 
+      Type        : I14
+      Note        : N/A
+   - ICONC        : 
+      Value       : 0
+      Description : >
+                     Solute in the liquid coolant option. Requires ISOLUT = 1 
+                     (Word 3 on Main Data Card 9) when ICONC > 0.
+                     0 = no,
+                     1 = dissolved solute only,
+                     2 = both dissolved and plated-out solute.
+      Type        : I14
+      Note        : N/A
+6:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Dimension   : 5
+      Note        : N/A
+   - IGEOM        : 
+      Value       : 0
+      Description : >
+                     Vessel geometry option.
+                     0 = cylindrical geometry,
+                     1 = Cartesian geometry
+      Type        : I14
+      Note        : N/A
+   - NVENT        : 
+      Value       : 0
+      Description : >
+                     Number of vent valves in the VESSEL. No vent valve or 
+                     maximum of one vent valve per radial interface between 
+                     VESSEL cells is allowed; therefore, actual valves may 
+                     have to be lumped together for each cell interface.
+      Type        : I14
+      Note        : N/A
+   - NVVTB        : 
+      Value       : 0
+      Description : >
+                     Number of vent-valve resistance table data pairs. If 
+                     NVVTB = 0, the maximum or minimum vent-valve pressure 
+                     drops and flow-loss resistances are input. If NVVTB > 0,
+                     the flow-loss resistance vs pressure-drop table is input, 
+                     on Card Set 18 (Array VVTAB).
+      Type        : I14
+      Note        : N/A
+   - NGRIDS       :
+      Value       : 0
+      Description : >
+                     Number of spacer grids present in the core region. Input 
+                     0 if no grid spacers are present or you do not intend to 
+                     model their effect. NGRIDS cannot be larger than 0 if 
+                     NAMELIST GRIDTYPES is zero.
+      Type        : I14
+      Note        : N/A
+   - VESSTYPE     : 
+      Value       : 0
+      Description : >
+                     The type of modelling behavior employed by this VESSEL. 
+                     0 = model VESSEL as an RPV (the default),
+                     1 = model VESSEL as a drywell. This option uses a special 
+                     wall condensation model appropriate for drywells. Otherwise, 
+                     it behave the same as VESSTYPE = 0.
+      Type        : I14
+      Note        : N/A
+7:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Dimension   : 4
+      Note        : N/A
+   - SHELV        : 
+      Value       : 0
+      Description : >
+                     Elevation (m) of the bottom interface of axial cell (level) 
+                     1 in the VESSEL (used only when NAMELIST variable IELV = 1
+                     is input).
+      Type        : E14.4
+      Note        : N/A
+   - EPSW         : 
+      Value       : 0
+      Description : Wall surface roughness.
+      Type        : E14.4
+      Note        : N/A
+   - NOLT         : 
+      Value       : 0
+      Description : >
+                     Turns 3D level tracking on or off (used only when NAMELIST 
+                     variable NOLT3D = 0). If NOLT is positive, 3D Level is 
+                     turned off in the VESSEL. If NOLT = 0; 3D level tracking 
+                     is turned on in the VESSEL and is controlled by ILEV (see 
+                     Card Set 60).
+      Type        : I14
+      Note        : N/A
+   - RFLDINPUT    :
+      Value       : 0
+      Description : >
+                     Flag to indicate the existence of special optional input of 
+                     importance to reflood calculations. If non-zero, then 
+                     Card Set 13 and Card Set 14 (i.e., UNHEATFR and NHSCA) are 
+                     input. If zero, then card array sets 13 and 14 are not 
+                     input. Note that if the VESSEL component has no core region, 
+                     this parameter should be input as 0.
+      Type        : I14
+      Note        : N/A
+8:
+   - General      :
+      Skipped     : True
+      Type        : Scalar
+      Dimension   : 2
+      Note        : If NAMELIST variable USEVESSHS = 0, do not input this Card.
+   - MATHS        : 
+      Value       : 0
+      Description : Material type for the lumped slab heat structure.
+      Type        : I14
+      Note        : N/A
+   - HSOUT        : 
+      Value       : 0
+      Description : >
+                     Flag for vessel heat structure edit in the output file.
+                     0 = no,
+                     1 = yes.
+      Type        : E14.4
+      Note        : N/A
+9:
+   - General      :
+      Skipped     : True
+      Type        : Scalar
+      Dimension   : 5
+      Note        : If NAMELIST variable USEVESSHS = 0, do not input this Card.
+   - NODESD       : 
+      Value       : 0
+      Description : Material type for the lumped slab heat structure.
+      Type        : I14
+      Note        : N/A
+   - DHOUTL       : 
+      Value       : 0
+      Description : >
+                     Heat transfer coefficient to liquid on vessel outside 
+                     surface (W.m^-2.K^-1)
+      Type        : E14.4
+      Note        : N/A
+   - DHOUTV       : 
+      Value       : 0
+      Description : >
+                     Heat transfer coefficient to liquid on vessel outside 
+                     surface (W.m^-2.K^-1)
+      Type        : E14.4
+      Note        : N/A
+   - DTOUTL       : 
+      Value       : 0
+      Description : >
+                     Liquid temperature outside vessel (K)
+      Type        : E14.4
+      Note        : N/A
+   - DTOUTV       : 
+      Value       : 0
+      Description : >
+                     Vapor temperature outside vessel (K)
+      Type        : E14.4
+      Note        : N/A
+10:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : NASX
+      Note        : N/A
+   - Z            : 
+      Value       : 0
+      Description : >
+                     Axial upper-interface locations (elevations) (m) of the 
+                     z-direction axial-cells (levels) (referenced to a 0.0 m 
+                     (elevation) value at the bottom interface of the first 
+                     axial cell (level) in the Vessel)
+      Type        : E14.4
+      Note        : N/A
+10:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : NRSX
+      Note        : N/A
+   - RorX         : 
+      Value       : 0
+      Description : >
+                     Radii or x outer-interface locations (m) of the r- or 
+                     x-directional cells (interface to a 0.0 m value at the 
+                     inner-interface of cell 1).
+      Type        : E14.4
+      Note        : N/A

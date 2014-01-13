@@ -1,0 +1,1108 @@
+1:
+   - General      :
+      Skipped     : False
+      Dimension   : 4
+      Type        : Scalar
+      Note        : N/A
+   - TYPE         :
+      Value       : vessel
+      Description : Component type (VESSEL left justified).
+      Type        : A14
+      Note        : N/A
+   - NUM          :
+      Value       : 0
+      Description : Component ID number (must be unique).
+      Type        : I14
+      Note        : N/A
+   - ID           : 
+      Value       : 0
+      Description : User ID number (arbitrary).
+      Type        : I14
+      Note        : N/A
+   - CTITLE       :
+      Value       : 0
+      Description : Hollerith component description.
+      Type        : A30
+      Note        : N/A
+2:
+   - General      :
+      Skipped     : True
+      Dimension   : 2
+      Type        : Scalar
+      Note        : Only Input if NAMELIST FLUIDS > 1
+   - EOS          :
+      Value       : N/A
+      Description : EOS identifier for this component.
+      Type        : A14
+      Note        : N/A
+   - PHASECHANGE  :
+      Value       : False
+      Description : >
+                     Phase change flag. True if change is allowed, 
+                     False otherwise.
+      Type        : A14
+      Note        : N/A
+3:
+   - General      :
+      Skipped     : False
+      Dimension   : 5
+      Type        : Scalar
+      Note        : N/A
+   - NASX         :
+      Value       : 0
+      Description : Number of axial (z-direction) cells (levels).
+      Type        : I14
+      Note        : N/A
+   - NRSX         :
+      Value       : 0
+      Description : >
+                     Number of radial (r-direction) cells (rings) or 
+                     x-direction cells. IGEOM (Word 1 Card Number 6) 
+                     defines cylindrical or Cartesian geometry.
+      Type        : I14
+      Note        : N/A
+   - NTSX         :
+      Value       : 0
+      Description : Number of azimuthal cells or y-direction.
+      Type        : I14
+      Note        : N/A
+   - NCSR         :
+      Value       : 0
+      Description : >
+                     Number of 1D Hydraulic-component (but not BREAK or 
+                     PLENUM component) junction connections to VESSEL-
+                     component cell interfaces. Each of the six VESSEL-
+                     cell interfaces can have any number of 1D hydraulic-
+                     component junction connections.
+      Type        : I14
+      Note        : N/A
+   - IVSSBF       :
+      Value       : 0
+      Description : >
+                     Axial boundary condition option. IVSSBF > 0 requires 
+                     additional input of level data for axial cells (levels) 
+                     0 and NASX+1 to define their constant FILL or BREAK 
+                     component cell boundary condition.
+                     
+                     The r- or x-directional or y-directional boundaries below 
+                     axial cell (level) 1 and above axial cell (level) NASX 
+                     are no-flow walls. 
+                     0 = No-flow wall below axial cell (level) 1 and above 
+                     axial cell (level) NASX. 
+                     2 = axial cell (level) 0 defines a FILL and axial cell 
+                     (level) NASX+1 defines a BREAK boundary condition.
+                     20 = axial cell (level) 0 defines a BREAK boundary 
+                     condition and axial cell (level) NASX+1 defines a FILL
+                     boundary condition.
+                     22 = both axial cells (levels) 0 and NASX+1 define a BREAK
+      Type        : I14
+      Note        : N/A
+4:
+   - General    :
+      Skipped   : True
+      Type      : Scalar
+      Note      : Input if NCELLS or NSIDES != 0 or USESJC == 1, otherwise input for each NSIDES
+   - NCLK       : 
+      Value     : 0
+      Note      : N/A
+   - JUNLK      : 
+      Value     : 0
+      Note      : N/A
+   - NCMPTO     : 
+      Value     : 0
+      Note      : N/A
+   - NCLKTO     :
+      Value     : 0
+      Note      : N/A
+   - NLEVTO     : 
+      Value     : 0
+      Note      : N/A
+5:
+   - General    :
+      Skipped   : True
+      Type      : Scalar
+      Note      : Input if NCELLS or NSIDES != 0, JUNLK == 0, and USESJC == 2 or 3
+   - FALK       : 
+      Value     : 0.0
+      Note      : N/A
+   - CLOS       :
+      Value     : 0.0
+      Note      : N/A
+   - VLLK       :
+      Value     : 0.0
+      Note      : N/A
+   - VVLK       :
+      Value     : 0.0
+      Note      : N/A
+   - DELZLK     :
+      Value     : 0.0
+      Note      : N/A
+6:
+   - General    :
+      Skipped   : True
+      Type      : Scalar
+      Note      : Input if NCELLS or NSIDES != 0 or USESJC = 1 or 3
+   - THETA      :
+      Value     : 0.0
+      Note      : N/A
+   - IENTRN     :
+      Value     : 0
+      Note      : N/A
+7:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - ICHF       :
+      Value     : 0
+      Note      : N/A
+   - ICONC      :
+      Value     : 0
+      Note      : N/A
+   - IAXCND     :
+      Value     : 0
+      Note      : N/A
+   - LIQLEV     :
+      Value     : 0
+      Note      : N/A
+   - IPVHT      :
+      Value     : 0
+      Note      : N/A
+8:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - WIDTH      : 
+      Value     : 0.0
+      Note      : N/A
+   - TH         :
+      Value     : 0.0
+      Note      : N/A
+   - HOUTL      : 
+      Value     : 0.0
+      Note      : N/A
+   - HOUTV      :  
+      Value     : 0.0
+      Note      : N/A
+   - TOUTL      :
+      Value     : 0.0
+      Note      : N/A
+9:
+   - General      :
+      Skipped     : False
+      Type        : Scalar
+      Note        : N/A
+   - TOUTV        :
+      Value       : 0.0
+      Note        : N/A
+   - QUADSYM      :
+      Value       : 0
+      Note        : N/A
+   - NUMWATERRODS :
+      Value       : 0
+      Note        : N/A
+   - NVFRAYS      :
+      Value       : 0
+      Note        : N/A
+10:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - NGRP       : 
+      Value     : 0
+      Note      : N/A
+   - NCHANS     : 
+      Value     : 0
+      Note      : N/A
+   - NODESR     :
+      Value     : 0
+      Note      : or NELEMR
+   - NROW       :
+      Value     : 0
+      Note      : N/A
+   - NCRZ       :
+      Value     : 0
+      Note      : N/A
+11:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - ICRNK      :
+      Value     : 0
+      Note      : N/A
+   - ICRLH      : 
+      Value     : 0
+      Note      : N/A
+   - NMWRX      :
+      Value     : 0
+      Note      : N/A
+   - NFCI       :
+      Value     : 0
+      Note      : N/A
+   - NFCIL      :
+      Value     : 0
+      Note      : N/A
+12:
+   - General    :
+      Skipped   : True
+      Type      : Scalar
+      Note      : Only input if NFCI > 1 or NFCI < 1
+   - UCRPDOWN   :
+      Value     : 0
+      Note      : N/A
+   - UFSWELL    : 
+      Value     : 1
+      Note      : N/A
+   - RFCLAD     :
+      Value     : 1
+      Note      : N/A
+   - MULTBFL    :
+      Value     : 0
+      Note      : N/A
+13:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - FMON       :
+      Value     : 0
+      Note      : N/A
+   - REFLOODON  : 
+      Value     : 0
+      Note      : N/A
+   - NZMAX      :
+      Value     : 0
+      Note      : N/A
+   - NZMAXW     :
+      Value     : 0
+      Note      : N/A
+   - IBEAM      :
+      Value     : 0
+      Note      : N/A
+14:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - DZNHT      :
+      Value     : 0.0
+      Note      : N/A
+   - DZNHTW     :  
+      Value     : 0.0
+      Note      : N/A
+   - DTXHT1     :
+      Value     : 0.0
+      Note      : N/A
+   - DTXHT2     :
+      Value     : 0.0
+      Note      : N/A
+   - UNHEATFR   :
+      Value     : 0.0
+      Note      : N/A
+15:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - HGAPO      :
+      Value     : 0.0
+      Note      : N/A
+   - PDRAT      :  
+      Value     : 0.0
+      Note      : N/A
+   - PLDR       :
+      Value     : 0.0
+      Note      : N/A
+   - FUCRAC     :
+      Value     : 0.0
+      Note      : N/A
+   - NORAD      :
+      Value     : 0
+      Note      : N/A
+16:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - EMCIF1     :
+      Value     : 0
+      Note      : N/A
+   - EMCIF2     :
+      Value     : 0
+      Note      : N/A
+   - EMCIF3     :
+      Value     : 0
+      Note      : N/A
+   - NOANI      : 
+      Value     : 0
+      Note      : N/A
+   - NGRIDS     :
+      Value     : 0
+      Note      : N/A
+17:
+   - General    :
+      Skipped   : False
+      Type      : Scalar
+      Note      : N/A
+   - EMCOF1     :
+      Value     : 0
+      Note      : N/A
+   - EMCOF2     :
+      Value     : 0
+      Note      : N/A
+   - EMCOF3     :
+      Value     : 0
+      Note      : N/A
+   - ISOLVE     :
+      Value     : 0
+      Note      : N/A
+18:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - DX         : N/A
+19:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - VOL        : N/A
+20:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FA         : N/A
+21:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FRIC       : N/A
+22:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FRICR      : N/A
+23:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FRICBFORRE : N/A
+24:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FRICCFORRE : N/A
+25:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FRICBREVRE : N/A
+26:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - FRICCREVRE : N/A
+27:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - GRAV       : N/A
+28:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - HD         : N/A
+29:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - HDHT       : N/A
+30:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - ICFLG      : N/A
+31:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - NFF        : N/A
+32:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - LCCFL      : N/A
+33:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - ALP        : N/A
+34:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - VL         : N/A
+35:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - VV         : N/A
+36:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - TL         : N/A
+37:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - TV         : N/A
+38:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - P          : N/A
+39:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - PA         : N/A
+40:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - ILEV       : N/A
+41:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - WFMFL      : N/A
+42:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS + 1
+      Note      : N/A
+   - WFMFV      : N/A
+43:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS * NODES
+      Note      : N/A
+   - QPPP       : N/A
+44:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NODES - 1
+      Note      : Dimension is NELEM if ISOLVE == 0
+   - MATID      : N/A
+45:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS * NODES
+      Note      : N/A
+   - TW         : N/A
+46:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : 1
+      Note      : N/A
+   - IDROD      : N/A
+47:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - NHCELO     : N/A
+48:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - CONC       : N/A
+49:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - S          : N/A
+50:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - XGNB       : N/A
+51:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NCELLS
+      Note      : N/A
+   - XLNB       : N/A
+52:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NGRP
+      Note      : N/A
+   - RDX        : N/A
+53:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : NGRP+1
+      Note      : Input if NMWRX != 0 and FOXLAYER == 1
+   - OXLAYER    : N/A
+54:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NODESR
+      Note      : Input if ISOLVE == 0
+   - RADRD      : N/A
+55:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NELEMR
+      Note      : Input if ISOLVE == 1
+   - LELEM      : N/A
+56:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NODESR - 1
+      Note      : Dimension is NELEMR if ISOLVE == 1
+   - MATRD      :
+57:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NCRZ
+      Note      : N/A
+   - NFAX       : N/A
+58:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension :
+      Note      :
+   - RFTN       : 
+59:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - RDPWR      :
+60:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - CPOWR      :
+61:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - RADPW      :
+62:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - FPUO2      :
+63:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - FTD        :
+64:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - GMIX       :
+65:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - PGAPT      :
+66:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - BURN       :
+67:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - GADC       :
+68:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - MROD       :
+69:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - VIEWGRP    :
+70:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - BEAMGRP    :
+71:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - I          :
+      Value     :
+      Note      :
+   - J          :
+      Value     :
+      Note      :
+   - LEVROD     :
+      Value     :
+      Note      :
+72:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - I          :
+      Value     :
+      Note      :
+   - J          :
+      Value     :
+      Note      :
+   - WATERRODFLG:
+      Value     :
+      Note      :
+   - XLOC       :
+      Value     :
+      Note      :
+   - YLOC       :
+      Value     :
+      Note      :
+73:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - LEVRODG    :
+74:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - WRODFLG    :
+75:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - IGEOM      :
+      Value     :
+      Note      :
+   - WRNODES    :
+      Value     :
+      Note      :
+76:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - WRINLET    :
+      Value     :
+      Note      :
+   - WROUTLET   :
+      Value     :
+      Note      :
+   - DIA        :
+      Value     :
+      Note      :
+   - SIDEA      :
+      Value     :
+      Note      :
+   - SIDEB      :
+      Value     :
+      Note      :
+77:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - TH         :
+      Value     :
+      Note      :
+   - RCORNER    :
+      Value     :
+      Note      :
+   - FLOWAREA   :
+      Value     :
+      Note      :
+   - FLWAREAI   :
+      Value     :
+      Note      :
+   - FLWAREAO   :
+      Value     :
+      Note      :
+78:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - HD         :
+      Value     :
+      Note      :
+   - HDRI       :
+      Value     :
+      Note      :
+   - HDRO       :
+      Value     :
+      Note      :
+   - THRMDIAI   :
+      Value     :
+      Note      :
+   - THRMDIAO   :
+      Value     :
+      Note      :
+79:
+   - General    :
+      Skipped   :
+      Type      : Scalar
+      Note      :
+   - WRFLOSSI   :
+      Value     :
+      Note      :
+   - WRFLOSSO   :
+      Value     :
+      Note      : 
+   - WRRLOSSI   :
+      Value     :
+      Note      :
+   - WRRLOSSO   :
+      Value     :
+      Note      :
+80:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - MATWR      : 
+81:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension :
+      Note      :
+   - TW         :
+82:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NGRIDS
+      Note      : N/A
+   - ZGRIDS     : N/A
+83:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : NGRIDS
+      Note      : N/A
+   - GRIDTYPE   : N/A
+
+
+
+29:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : 31
+      Note      : The dimension is determined from the number of radial nodes in a pin. Using finite element method, Nodes = 2 * Nelem + 1 = 2 * 15 + 1 = 31.
+   - RDPWR      : "10 * [0.0] + 5 * [1.0] + 16 * [0.0]"
+23:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NFBPWT = 0.
+   - RS         : N/A
+24:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : 6
+      Note      : Total 6 corresponds to NPWR (the number of HTSTR connected to this power).
+   - CPOWR      : "6 * [1.0]"
+25:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NFBPWT < 4.
+   - HS         : N/A
+26:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : No supplemental rod is modeled here.
+   - RPKF       : N/A
+27:
+   - General    :
+      Skipped   :
+      Type      : Array
+      Dimension : 90
+      Note      : The dimension corresponds to the NZPWZ = 89
+   - ZPWZT      : >
+                  [0.000, 0.00345, 0.069, 0.138, 0.1830, 0.228, 0.273,
+                   0.303, 0.34800, 0.393, 0.438, 0.4530, 0.468, 0.523,
+                   0.583, 0.64300, 0.698, 0.728, 0.7830, 0.838, 0.888, 
+                   0.938, 0.98800, 1.003, 1.048, 1.0930, 1.138, 1.183, 
+                   1.228, 1.27300, 1.318, 1.348, 1.3930, 1.438, 1.493, 
+                   1.543, 1.55800, 1.621, 1.684, 1.7470, 1.810, 1.873, 
+                   1.903, 1.96300, 2.028, 2.088, 2.1030, 2.166, 2.229, 
+                   2.292, 2.35500, 2.418, 2.448, 2.5080, 2.573, 2.633, 
+                   2.648, 2.69300, 2.738, 2.783, 2.8280, 2.873, 2.918, 
+                   2.963, 2.99300, 3.053, 3.118, 3.1780, 3.193, 3.243,        
+                   3.288, 3.33800, 3.398, 3.458, 3.5080, 3.538, 3.598,     
+                   3.663, 3.72300, 3.738, 3.788, 3.8380, 3.888, 3.938, 
+                   3.988, 4.03800, 4.053, 4.083, 4.1115, 4.113]
+
+28:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IPWRAD = 0.
+   - RPWRT      : N/A
+29:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : 91
+      Note      : First value is the independent variable for (ind.var. - dependent) axial power shape. In this it is time but constant shape.
+   - ZPWTB      : "1 * [0.00] + 3 * [0.00] + 7 * [0.65] + 9 * [0.87] + 14 * [1.06] + 25 * [1.19] + 13 * [1.06] + 8 * [0.87] + 6 * [0.65] + 5 * [0.0]"
+30:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NZPWRF = 0
+   - ZPWRF      : N/A
+31:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NFBPWT = 0 
+   - ZS         : N/A
+32:
+   - General    :
+      Skipped   : False
+      Type      : Array
+      Dimension : 91
+      Note      :
+   - RPWTBR     : >
+                  [   0.0, 187.50E3,   2.5, 200.00E3,   5.0, 192.50E3,
+                     10.0, 190.00E3,  20.0, 180.00E3,  50.0, 175.00E3,
+                     75.0, 160.00E3, 100.0, 152.50E3, 150.0, 141.25E3,
+                    200.0, 132.50E3, 250.0, 126.25E3, 300.0, 121.50E3,
+                    400.0, 121.50E3, 500.0, 121.50E3] 
+
+33:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NRPWRF = 0
+   - RPWRF      : N/A
+34:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY < 11
+   - RCTF       : N/A
+35:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY < 11
+   - RCTC       : N/A
+36:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY < 11
+   - RCAL       : N/A
+37:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY < 11
+   - RCBM       : N/A
+38:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - BETA       : N/A
+39:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - LAMBDA     : N/A
+40:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - CDGN       : N/A
+41:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - LAMDH      : N/A
+42:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - EDH        : N/A
+43:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - CDHN       : N/A
+44:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because IRPWTY = 7
+   - PHIST      : N/A
+45:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NDHX = 0
+   - FP235AR    : N/A
+46:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NDHX = 0
+   - FP239AR    : N/A
+47:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NDHX = 0
+   - FP238AR    : N/A
+48:
+   - General    :
+      Skipped   : True
+      Type      : Array
+      Dimension : N/A
+      Note      : Skipped because NDHX = 0
+   - FP241AR    : N/A
