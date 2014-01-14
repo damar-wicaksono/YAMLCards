@@ -930,7 +930,7 @@
       Note        : N/A
 41:
    - General      :
-      Skipped     : False
+      Skipped     : True
       Type        : Array
       Dimension   : NTSX*NRSX
       Note        : > 
@@ -946,4 +946,218 @@
                      used to evaluate countercurrent flow limitation at the cell 
                      interface (Check Word 5 Main-Data Card 9).
       Type        : I14
+      Note        : N/A
+42:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - FRVOL        : 
+      Value       : 0
+      Description : Cell fluid-volume fractions (-) (0.0 <= VOL <= 1.0).
+      Type        : E14.4
+      Note        : N/A
+43:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - FRFAYT       : 
+      Value       : 0
+      Description : > 
+                     Cell-edge flow-area fractions (-) in the theta or y 
+                     direction (0.0 <= FRFAYT <= 1.0). 
+      Type        : E14.4
+      Note        : N/A
+44:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - FRFAZ        : 
+      Value       : 0
+      Description : >
+                     Cell-edge flow are fractions (-) in the z direction 
+                     (0.0 <= FRFAZ <= 1.0).
+      Type        : E14.4
+      Note        : N/A
+45:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - FRFAXR       : 
+      Value       : 0
+      Description : >
+                     Cell-edge flow are fractions (-) in the r or x direction 
+                     (0.0 <= FRFAXR <= 1.0).
+      Type        : E14.4
+      Note        : N/A
+46:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - HDYT         : 
+      Value       : 0
+      Description : Hydraulic diameters (m) in the theta or y direction.
+      Type        : E14.4
+      Note        : N/A
+47:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - HDZ          : 
+      Value       : 0
+      Description : >
+                     Hydraulic diameters (m) in the z direction (for heat 
+                     transfer purposes, do not input the axial-direction 
+                     hydraulic diameter with a value of 0.0).
+                     Setting the axial hydraulic diameter to a negative value 
+                     will engange the orifice model which suppresses transverse 
+                     momentum from being carried across the interface.
+                     This is most useful as a flow straightener across core 
+                     support plates.
+      Type        : E14.4
+      Note        : N/A
+48:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - HDXR         : 
+      Value       : 0
+      Description : Hydraulic diameters (m) in the r or x direction.
+      Type        : E14.4
+      Note        : N/A
+49:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - ALPN         : 
+      Value       : 0
+      Description : Initial gas volume fractions (-).
+      Type        : E14.4
+      Note        : N/A
+50:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - VVNYT        : 
+      Value       : 0
+      Description : Initial gas velocities (m.s^-1) in the theta or y direction.
+      Type        : E14.4
+      Note        : N/A
+51:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - VVNZ         : 
+      Value       : 0
+      Description : Initial gas velocities (m.s^-1) in the z direction.
+      Type        : E14.4
+      Note        : N/A
+52:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - VVNXR        : 
+      Value       : 0
+      Description : Initial gas velocities (m.s^-1) in the r or x direction.
+      Type        : E14.4
+      Note        : N/A
+53:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - VLNYT        : 
+      Value       : 0
+      Description : > 
+                     Initial liquid velocities (m.s^-1) in the 
+                     theta or y direction.
+      Type        : E14.4
+      Note        : N/A
+54:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - VLNZ         : 
+      Value       : 0
+      Description : Initial liquid velocities (m.s^-1) in the z direction.
+      Type        : E14.4
+      Note        : N/A
+55:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - VLNXR        : 
+      Value       : 0
+      Description : Initial liquid velocities (m.s^-1) in the r or x direction.
+      Type        : E14.4
+      Note        : N/A
+56:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - TVN          : 
+      Value       : 0
+      Description : Initial gas temperature (K).
+      Type        : E14.4
+      Note        : N/A
+57:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - TLN          : 
+      Value       : 0
+      Description : Initial liquid temperature (K).
+      Type        : E14.4
+      Note        : N/A
+58:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - PN           : 
+      Value       : 0
+      Description : Initial pressures (Pa).
+      Type        : E14.4
+      Note        : N/A
+59:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+   - PAN          : 
+      Value       : 0
+      Description : Initial non-condensable-gas partial pressures (Pa).
+      Type        : E14.4
       Note        : N/A
