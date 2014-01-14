@@ -365,7 +365,7 @@
                      axial cell (level) in the Vessel)
       Type        : E14.4
       Note        : N/A
-10:
+11:
    - General      :
       Skipped     : True
       Type        : Array
@@ -377,5 +377,67 @@
                      Radii or x outer-interface locations (m) of the r- or 
                      x-directional cells (interface to a 0.0 m value at the 
                      inner-interface of cell 1).
+      Type        : E14.4
+      Note        : N/A
+12:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : NTSX
+      Note        : N/A
+   - TorY         : 
+      Value       : 0
+      Description : >
+                     Azimuthal angle or y outer-interface locations of the 
+                     theta- or y-direction cells (referenced to a 0.0 rad 
+                     or m value at the inner interface of the first cell).
+                     For cylindrical geometry (IGEOM = 0, Word 1 on Card 6) 
+                     and input data in SI units (NAMELIST variable IOINP = 0), 
+                     the azimuthal angles can be input in either degree or 
+                     radian.
+                     A full geometry cylinder VESSEL model requires that the 
+                     last azimuthal angle T(NTSX) = 2*pi rad.
+                     A partial geometry cylinder VESSEL model with any other 
+                     last azimuthal angle less than 2*pi rad can be defined 
+                     but requires that array FRFAYT (Card Set 43) input data 
+                     have 0.0 values for all the NTSX azimuthal interfaces of 
+                     NRSX radial cells.
+      Type        : E14.4
+      Note        : N/A
+13:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : Input only if RLFDINPUT = 1 (Word 4 on Card Number 7) 
+   - UNHEATFR     : 
+      Value       : 0
+      Description : >
+                     Fractions of the HTSTR component element surface in each 
+                     of the NTSX*NRSX horizontal-plane mesh-cell columns, which 
+                     are unheated.
+                     The first NTSX values corresponds to ring 1, the second 
+                     NTSX values corresponds to ring 2, and so on.
+                     The input is used as part of the reflood constitutive 
+                     modelling packages.
+      Type        : E14.4
+      Note        : N/A
+14:
+   - General      :
+      Skipped     : False
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : Input only if RLFDINPUT = 1 (Word 4 on Card Number 7) 
+   - NHSCA        : 
+      Value       : 0
+      Description : >
+                     The HTSTR component numbers that define the primary 
+                     powered average (power) fuel rod element in each of the 
+                     NTSX*NRSX horizontal-plane mesh-cell columns. 
+                     The first NTSX values corresponds to ring 1,
+                     the second NTSX values corresponds to ring 2, and so on. 
+                     Note that the HTSTR component number identified here must 
+                     be located in the theta, radial cell index that corresponds 
+                     to the 
       Type        : E14.4
       Note        : N/A
