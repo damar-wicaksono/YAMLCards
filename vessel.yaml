@@ -438,6 +438,134 @@
                      the second NTSX values corresponds to ring 2, and so on. 
                      Note that the HTSTR component number identified here must 
                      be located in the theta, radial cell index that corresponds 
-                     to the 
+                     to the i,j element in the HSCA array.
+                     Input 0 for the horizontal-plane mesh-cell columns that are 
+                     not in the core of the VESSEL component (i.e., downcomer, 
+                     bypass with no fuel rods).
+                     This input is used as part of the reflood constitutive 
+                     modelling package.
       Type        : E14.4
+      Note        : N/A
+15:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : NTSX*NRSX
+      Note        : >
+                     Input only if RLFDINPUT = 1 (Word 4 on Card Number 7) and 
+                     if NAMELIST variable BLOCKAGEON = .TRUE. and/or 
+                     if NAMELIST variable MULTBFL < 0.0
+   - MULTBFL      : 
+      Value       : 0
+      Description : >
+                     K-factor multipliers to be used for the blockage flow loss 
+                     calculation in the core if a cladding rupture occurs within 
+                     a given stack of cells. 
+                     If any value input for this array is zero or negative,
+                     the it is to 1.0.
+      Type        : E14.4
+      Note        : N/A
+16:
+   - General      :
+      Skipped     : True
+      Type        : Scalar
+      Dimension   : 3
+      Note        : Input only if NVENT > 0 (Word 2 on Card Number 6)
+   - IZV          : 
+      Value       : 0
+      Description : Axial-cell (level) number of the vent-valve interface location.
+      Type        : I14
+      Note        : N/A
+   - KV           : 
+      Value       : 0
+      Description : >
+                     Horizontal-plane relative-cell number (J+NTSX*(I-1) where I 
+                     is the r- or x-direction cell number and J is the theta- 
+                     or y-direction cell number) of the vent-valve interface 
+                     location on the outer radial or x interface of the cell.
+      Type        : I14
+      Note        : N/A
+   - AVENT        : 
+      Value       : 0
+      Description : >
+                     Maximum flow area (m^2) of the vent valve located on the 
+                     outer radial or x interface of the cell.
+      Type        : E14.4
+      Note        : N/A
+17:
+   - General      :
+      Skipped     : True
+      Type        : Scalar
+      Dimension   : 4*NVENT
+      Note        : > 
+                     Input only if NVENT > 0 (Word 2 on Card Number 6) and
+                     if NVVTB == 0.
+                     Input for each NVENT vent valves.
+   - DPCVN        : 
+      Value       : 0
+      Description : >
+                     Maximum pressure drop (Pa) between the inner and outer 
+                     radial or x-direction cells when the vent valve is closed.
+      Type        : E14.4
+      Note        : N/A
+   - DPOVN        : 
+      Value       : 0
+      Description : >
+                     Minimum pressure drop (Pa) between the inner and outer 
+                     radial or x-direction cells when the vent valve is closed.
+      Type        : E14.4
+      Note        : N/A
+   - FRCVN        : 
+      Value       : 0
+      Description : Flow-loss resistance (-) of the vent valve in its closed post.
+      Type        : E14.4
+      Note        : N/A
+   - FROVN        : 
+      Value       : 0
+      Description : Flow-loss resistance (-) of the vent valve in its open post.
+      Type        : E14.4
+      Note        : N/A
+18:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : 2*ABS(NVVTB)
+      Note        : > 
+                     Input only if NVVTB != 0 (Word 3 on Card Number 6).
+                     Input a table of vent-valve flow-loss resistance vs. 
+                     pressure drop across the vent valve.
+                     Only one table is input for all valves.
+   - VVTAB        : 
+      Value       : 0
+      Description : >
+                     Vent-valve FRIC flow-loss resistance table (Pa, -).
+                     Input ABS(NVVTB) table-defining data pairs having the 
+                     following form (pressure drop across the vent valve, 
+                     FRIC flow-loss resistance of the vent-valve)
+      Type        : E14.4
+      Note        : N/A
+19:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : NGRIDS
+      Note        : Input only if NGRIDS > 0.
+   - ZGRIDS       : 
+      Value       : 0
+      Description : >
+                     Axial z-direction location (elevation) (m) of each 
+                     spacer grid in the core region as measured from the 
+                     VESSEL bottom (consistent with the Z array (Card Set 10).
+      Type        : E14.4
+      Note        : N/A
+20:
+   - General      :
+      Skipped     : True
+      Type        : Array
+      Dimension   : NGRIDS
+      Note        : Input only if NGRIDS > 0.
+   - GRIDTYPE     : 
+      Value       : 0
+      Description : Grid spacer type id (see grid spacer input)
+      Type        : I14
       Note        : N/A
