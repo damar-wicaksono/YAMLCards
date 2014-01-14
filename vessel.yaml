@@ -547,7 +547,7 @@
 19:
    - General      :
       Skipped     : True
-      Type        : Array
+      Type        : False
       Dimension   : NGRIDS
       Note        : Input only if NGRIDS > 0.
    - ZGRIDS       : 
@@ -560,7 +560,7 @@
       Note        : N/A
 20:
    - General      :
-      Skipped     : True
+      Skipped     : False
       Type        : Array
       Dimension   : NGRIDS
       Note        : Input only if NGRIDS > 0.
@@ -569,3 +569,84 @@
       Description : Grid spacer type id (see grid spacer input)
       Type        : I14
       Note        : N/A
+21:
+   - General      :
+      Skipped     : True
+      Type        : Scalar
+      Dimension   : 4
+      Note        : Input only if NVGRAV != 0.
+   - GC           : 
+      Value       : 0
+      Description : >
+                     Gravitational acceleration constant (default is 
+                     9.80665 m.s^-1).
+                     The GC value from the last VESSEL component input is also
+                     used for the one dimensional components.
+      Type        : E14.4
+      Note        : N/A
+   - GYTC         : 
+      Value       : 0
+      Description : >
+                     The theta- or y-direction (-) of the gravity unit vector 
+                     located ate the center of mesh cell (1,1,1)
+      Type        : E14.4
+      Note        : N/A
+   - GXRC         : 
+      Value       : 0
+      Description : >
+                     The r- or x-direction (-) of the gravity unit vector 
+                     located ate the center of mesh cell (1,1,1)
+      Type        : E14.4
+      Note        : N/A
+   - GZC          : 
+      Value       : 0
+      Description : >
+                     The z-direction (-) of the gravity unit vector 
+                     located ate the center of mesh cell (1,1,1)
+      Type        : E14.4
+      Note        : N/A
+21:
+   - General      :
+      Skipped     : True
+      Type        : Set
+      Dimension   : 4*NCSR
+      Note        : >
+                     This is a card set, input for each NCSR.
+                     Input only if NCSR != 0.
+   - LISRL        : 
+      Value       : 0
+      Description : >
+                     Axial-cell (level) number of the source connection.
+      Type        : I14
+      Note        : N/A
+   - LISRC        : 
+      Value       : 0
+      Description : >
+                     Horizontal-plane relative-cell number associated with 
+                     the source connection (cell numbering in VESSEL level 
+                     counts through the NTSX (Word 3 on Card Number 3) theta- 
+                     or y-direction cells while considering on each of the r- 
+                     or x-direction cells from 1 to NRSX (Word 2 on Card 
+                     Number 3).
+      Type        : I14
+      Note        : N/A
+   - LISRF        : 
+      Value       : 0
+      Description : >
+                     Face number associated with the source connection. A 
+                     positive number indicates a connection to the upper 
+                     or outer face of the cell; a negative number indicates 
+                     a connection to the lower or inner face of the cell.
+                     1 = theta or y direction, 
+                     2 = axial z direction, 
+                     3 = r or x-direction.
+      Type        : I14
+      Note        : N/A
+   - LJUNS        : 
+      Value       : 0
+      Description : >
+                     Junction number associated with the source connection of 
+                     a VESSEL cell interface to a 1D component.
+      Type        : I14
+      Note        : N/A
+
