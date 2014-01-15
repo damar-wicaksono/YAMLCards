@@ -605,10 +605,10 @@
                      located ate the center of mesh cell (1,1,1)
       Type        : E14.4
       Note        : N/A
-23:
+22:
    - General      :
       Skipped     : True
-      Type        : Set
+      Type        : Source
       Dimension   : 4*NCSR
       Note        : >
                      This is a card set, input for each NCSR.
@@ -652,292 +652,316 @@
 23:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : HSA
       Note        : >
                      This is a VESSEL level card, repeat until NASX.
                      If NAMELIST variable USEVESSHS == 1, lumped parameter 
                      and double-sided heat structure data are input 
                      (Card Set 23 through Card Set 28).
-   - HSA          : 
+      Description : Lumped parameter heat slab area.
+      Unit        : m^2
+   - 1            : 
       Value       : 0
-      Description : Lumped parameter heat slab area (m^2).
       Type        : E14.4
       Note        : N/A
 24:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : HSM
       Note        : >
                      This is a VESSEL level card, repeat until NASX.
                      If NAMELIST variable USEVESSHS == 1, lumped parameter 
                      and double-sided heat structure data are input 
                      (Card Set 23 through Card Set 28).
+      Description : >
+                     Mass of lumped parameter heat slab.
+                     Must be input even if HSA = 0 (but will not be used).
+      Unit        : kg
    - HSM          : 
       Value       : 0
-      Description : >
-                     Mass of lumped parameter heat slab (kg).
-                     Must be input even if HSA = 0 (but will not be used).
       Type        : E14.4
       Note        : N/A
 25:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : DSA
       Note        : >
                      Input only if NODESD != 0.
                      This is a VESSEL level card, repeat until NASX.
                      If NAMELIST variable USEVESSHS == 1, lumped parameter 
                      and double-sided heat structure data are input 
                      (Card Set 23 through Card Set 28).
-   - DSA          : 
+      Description : Double slab inside surface area.
+      Unit        : m^2
+   - 1            : 
       Value       : 0
-      Description : Double slab inside surface area (m^2)
       Type        : E14.4
       Note        : N/A
 26:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : DSTH
       Note        : >
                      Input only if NODESD != 0.
                      This is a VESSEL level card, repeat until NASX.
                      If NAMELIST variable USEVESSHS == 1, lumped parameter 
                      and double-sided heat structure data are input 
                      (Card Set 23 through Card Set 28).
-   - DSTH         : 
-      Value       : 0
       Description : >
-                     Double slab thickness (m).
+                     Double slab thickness.
                      Must be input even if DSA = 0 (but will not be used).
+      Unit        : m
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 27:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : MATDS
       Note        : >
                      Input only if NODESD != 0.
                      This is a VESSEL level card, repeat until NASX.
                      If NAMELIST variable USEVESSHS == 1, lumped parameter 
                      and double-sided heat structure data are input 
                      (Card Set 23 through Card Set 28).
-   - MATDS        : 
-      Value       : 0
       Description : >
                      Double slab material type.
                      Must be input even if DSA = 0 (but will not be used).
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : I14
       Note        : N/A
 28:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NODESD*NTSX*NRSX
+      Name        : DST
       Note        : >
                      Input only if NODESD != 0.
                      This is a VESSEL level card, repeat until NASX.
                      If NAMELIST variable USEVESSHS == 1, lumped parameter 
                      and double-sided heat structure data are input 
                      (Card Set 23 through Card Set 28).
-   - DST          : 
+      Description : Double slab nodal temperature.
+      Unit        : K
+   - 1            : 
       Value       : 0
-      Description : Double slab nodal temperature (K).
       Type        : E14.4
       Note        : N/A
 29:
    - General      :
       Skipped     : False
-      Type        : Array
-      Dimension   : NODESD*NTSX*NRSX
-      Note        : This is a VESSEL level card, repeat until NASX.
-   - DST          : 
-      Value       : 0
-      Description : Double slab nodal temperature (K).
-      Type        : E14.4
-      Note        : N/A
-29:
-   - General      :
-      Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFZLYT
       Note        : This is a VESSEL level card, repeat until NASX.
-   - CFZLYT       : 
-      Value       : 0
       Description : > 
                      Liquid additive-friction-loss coefficients (-) in the 
                      theta or y direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 30:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFZLZ
       Note        : This is a VESSEL level card, repeat until NASX.
-   - CFZLZ        : 
-      Value       : 0
       Description : > 
                      Liquid additive-friction-loss coefficients (-) in the 
                      z direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 31:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFZLXR
       Note        : This is a VESSEL level card, repeat until NASX.
-   - CFZLXR       : 
-      Value       : 0
       Description : > 
                      Liquid additive-friction-loss coefficients (-) in the 
                      r or x direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 32:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFZVYT
       Note        : This is a VESSEL level card, repeat until NASX.
-   - CFZVYT       : 
-      Value       : 0
       Description : > 
                      Gas additive-friction-loss coefficients (-) in the 
                      theta or y direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 33:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFZVZ
       Note        : This is a VESSEL level card, repeat until NASX.
-   - CFZVZ        : 
-      Value       : 0
       Description : > 
                      Gas additive-friction-loss coefficients (-) in the 
                      z direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 34:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFZVXR
       Note        : This is a VESSEL level card, repeat until NASX.
-   - CFZVXR       : 
-      Value       : 0
       Description : > 
                      Gas additive-friction-loss coefficients (-) in the 
                      r or x direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 35:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFRLYT
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable NFRC3 == 2.
-   - CFRLYT       : 
-      Value       : 0
       Description : > 
                      Liquid reverse-flow direction additive-friction-loss 
                      coefficients (-) in the theta or y direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 36:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFRLZ
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable NFRC3 == 2.
-   - CFRLZ        : 
-      Value       : 0
       Description : > 
                      Liquid reverse-flow direction additive-friction-loss 
                      coefficients (-) in the z direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 37:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFRLXR
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable NFRC3 == 2.
-   - CFRLXR       : 
-      Value       : 0
       Description : > 
                      Liquid reverse-flow direction additive-friction-loss 
                      coefficients (-) in the r or x direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 38:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFRVXR
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable NFRC3 == 2.
-   - CFRVYT       : 
-      Value       : 0
       Description : > 
                      Gas reverse-flow direction additive-friction-loss 
                      coefficients (-) in the theta or y direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 39:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFRVZ
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable NFRC3 == 2.
-   - CFRVZ        : 
-      Value       : 0
       Description : > 
                      Gas reverse-flow direction additive-friction-loss 
                      coefficients (-) in the z direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 40:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : CFRVXR
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable NFRC3 == 2.
-   - CFRVXR       : 
-      Value       : 0
       Description : > 
                      Gas reverse-flow direction additive-friction-loss 
                      coefficients (-) in the r or x direction.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 41:
    - General      :
       Skipped     : True
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : LCCFL
       Note        : > 
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NCCFL != 0 (Word 5 Main-Data Card 9).
-   - LCCFL        : 
-      Value       : 0
       Description : > 
                      Countercurrent Flow limitation option.
                      0 = no countercurrent flow limitation calculation at the 
@@ -945,79 +969,91 @@
                      N = The countercurrent flow limitation parameter set number 
                      used to evaluate countercurrent flow limitation at the cell 
                      interface (Check Word 5 Main-Data Card 9).
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : I14
       Note        : N/A
 42:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : FRVOL
       Note        : This is a VESSEL level card, repeat until NASX.
-   - FRVOL        : 
-      Value       : 0
       Description : Cell fluid-volume fractions (-) (0.0 <= VOL <= 1.0).
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 43:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : FRFAYT
       Note        : This is a VESSEL level card, repeat until NASX.
-   - FRFAYT       : 
-      Value       : 0
       Description : > 
                      Cell-edge flow-area fractions (-) in the theta or y 
                      direction (0.0 <= FRFAYT <= 1.0). 
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 44:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : FRFAZ
       Note        : This is a VESSEL level card, repeat until NASX.
-   - FRFAZ        : 
-      Value       : 0
       Description : >
                      Cell-edge flow are fractions (-) in the z direction 
                      (0.0 <= FRFAZ <= 1.0).
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 45:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : FRFAXR
       Note        : This is a VESSEL level card, repeat until NASX.
-   - FRFAXR       : 
-      Value       : 0
       Description : >
-                     Cell-edge flow are fractions (-) in the r or x direction 
+                     Cell-edge flow are fractions in the r or x direction 
                      (0.0 <= FRFAXR <= 1.0).
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 46:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : HDYT
       Note        : This is a VESSEL level card, repeat until NASX.
-   - HDYT         : 
+      Description : Hydraulic diameters in the theta or y direction.
+      Unit        : m
+   - 1            : 
       Value       : 0
-      Description : Hydraulic diameters (m) in the theta or y direction.
       Type        : E14.4
       Note        : N/A
 47:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : HDZ
       Note        : This is a VESSEL level card, repeat until NASX.
-   - HDZ          : 
-      Value       : 0
       Description : >
-                     Hydraulic diameters (m) in the z direction (for heat 
+                     Hydraulic diameters in the z direction (for heat 
                      transfer purposes, do not input the axial-direction 
                      hydraulic diameter with a value of 0.0).
                      Setting the axial hydraulic diameter to a negative value 
@@ -1025,39 +1061,48 @@
                      momentum from being carried across the interface.
                      This is most useful as a flow straightener across core 
                      support plates.
+      Unit        : m
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 48:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : HDXR
       Note        : This is a VESSEL level card, repeat until NASX.
-   - HDXR         : 
+      Description : Hydraulic diameters in the r or x direction.
+      Unit        : m
+   - 1            : 
       Value       : 0
-      Description : Hydraulic diameters (m) in the r or x direction.
       Type        : E14.4
       Note        : N/A
 49:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : ALPN
       Note        : This is a VESSEL level card, repeat until NASX.
-   - ALPN         : 
+      Description : Initial gas volume fractions.
+      Unit        : N/A
+   - 1            : 
       Value       : 0
-      Description : Initial gas volume fractions (-).
       Type        : E14.4
       Note        : N/A
 50:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : VVNYT
       Note        : This is a VESSEL level card, repeat until NASX.
-   - VVNYT        : 
+      Description : Initial gas velocities in the theta or y direction.
+      Unit        : m.s^-1
+   - 1            : 
       Value       : 0
-      Description : Initial gas velocities (m.s^-1) in the theta or y direction.
       Type        : E14.4
       Note        : N/A
 51:
