@@ -1153,11 +1153,215 @@
 59:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
       Note        : This is a VESSEL level card, repeat until NASX.
    - PAN          : 
+      Level       : 1
       Value       : 0
       Description : Initial non-condensable-gas partial pressures (Pa).
       Type        : E14.4
+      Note        : N/A
+60:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Note        : This is a VESSEL level card, repeat until NASX.
+      Description : >
+                     1 = Indicates that the two-phase level exists in the 
+                     current cell.
+                     0 = Indicates that the two-phase level does not exist 
+                     in the current cell.
+                     -1 = The level tracking will be turned off for this cell
+   - ILEV         : 
+      Level       : 1
+      Value       : 0
+      Type        : I14
+      Note        : N/A
+61:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : VWFMLY
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NAMELIST variable MWFL != 0.
+      Description : >
+                     Wall-friction multiplier factor for the liquid phase 
+                     in the theta or y direction (-) (0.9 <= VWFMLY <= 1.1).
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+62:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : VWFMLZ
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NAMELIST variable MWFL != 0.
+   - 1            : 
+      Value       : 0
+      Description : >
+                     Wall-friction multiplier factor for the liquid phase 
+                     in the z direction (-) (0.9 <= VWFMLZ <= 1.1).
+      Type        : E14.4
+      Note        : N/A
+63:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : VWFMLX
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NAMELIST variable MWFL != 0.
+      Description : >
+                     Wall-friction multiplier factor for the liquid phase 
+                     in the r or x direction (-) (0.9 <= VWFMLX <= 1.1).
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+64:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : VWFMLY
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NAMELIST variable MWFV != 0.
+   - 1            : 
+      Value       : 0
+      Description : >
+                     Wall-friction multiplier factor for the gas phase 
+                     in the theta or y direction (-) (0.9 <= VWFMVY <= 1.1).
+      Type        : E14.4
+      Note        : N/A
+65:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : VWFMVZ
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NAMELIST variable MWFV != 0.
+      Description : >
+                     Wall-friction multiplier factor for the gas phase 
+                     in the theta or y direction (-) (0.9 <= VWFMVZ <= 1.1).
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+66:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : VWFMVX
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NAMELIST variable MWFV != 0.
+      Description : >
+                     Wall-friction multiplier factor for the gas phase 
+                     in the r or x direction (-) (0.9 <= VWFMVX <= 1.1).
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+67:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : CONC
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if ICONC != 0. (Word 5 on Card Number 5) 
+                     Input only if ISOLUT == 1. (Word 3 on Main-Data Card 9).
+      Description : Initial solute mass to liquid-coolant mass ratios.
+      Unit        : kg(solute).kg(liquid)^-1
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+68:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : S
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if ICONC != 0 or 1 (Word 5 on Card Number 5) 
+                     Input only if ISOLUT == 1. (Word 3 on Main-Data Card 9).
+      Description : Initial macroscopic densities of plated-out solute.
+      Unit        : kg.m^-3
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+69:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : XGNB
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NTRACEG > 0 (Word 1 on Main-Data Card 5) 
+                     or if NAMELIST variable IGAS > 11.
+      Description : > 
+                     Mass fraction for gas trace species or 
+                     if IGAS > 11 then mass fraction for each non-condensable 
+                     gas species. Non-condensable gas species index is defined 
+                     by the order in which gas species are input in the 
+                     NAMELIST variable NCGasSpecies array.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+70:
+   - General      :
+      Skipped     : False
+      Type        : Level
+      Dimension   : NTSX*NRSX
+      Name        : XLNB
+      Note        : >
+                     This is a VESSEL level card, repeat until NASX.
+                     Input only if NTRACEL > 0 (Word 2 on Main-Data Card 11). 
+                     Repeat this card set NTRACEL times.
+      Description : Mass fraction for liquid trace species.
+      Unit        : N/A
+   - 1            : 
+      Value       : 0
+      Type        : E14.4
+      Note        : N/A
+71:
+   - General      :
+      Skipped     : True
+      Type        : Repeat
+      Dimension   : 2
+      Note        : >
+                     The REPEAT level card can be used to repeat the data from 
+                     a level already input or repeated to define the data for 
+                     the next level. 
+                     Each REPEAT level card can repeat only the data from
+                     a level with a lesser level number that was input before 
+                     it (level numbers are specified sequentially).
+                     These cards may be used consecutively.
+   - AREP         : 
+      Value       : "REPEAT LEVEL"
+      Type        : A12
+      Note        : N/A
+   - NLEV         : 
+      Value       : 0
+      Type        : I4
       Note        : N/A
