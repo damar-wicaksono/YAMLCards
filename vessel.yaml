@@ -769,7 +769,7 @@
       Name        : CFZLYT
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Liquid additive-friction-loss coefficients (-) in the 
+                     Liquid additive-friction-loss coefficients in the 
                      theta or y direction.
       Unit        : N/A
    - 1            : 
@@ -784,7 +784,7 @@
       Name        : CFZLZ
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Liquid additive-friction-loss coefficients (-) in the 
+                     Liquid additive-friction-loss coefficients in the 
                      z direction.
       Unit        : N/A
    - 1            : 
@@ -799,7 +799,7 @@
       Name        : CFZLXR
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Liquid additive-friction-loss coefficients (-) in the 
+                     Liquid additive-friction-loss coefficients in the 
                      r or x direction.
       Unit        : N/A
    - 1            : 
@@ -814,7 +814,7 @@
       Name        : CFZVYT
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Gas additive-friction-loss coefficients (-) in the 
+                     Gas additive-friction-loss coefficients in the 
                      theta or y direction.
       Unit        : N/A
    - 1            : 
@@ -829,7 +829,7 @@
       Name        : CFZVZ
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Gas additive-friction-loss coefficients (-) in the 
+                     Gas additive-friction-loss coefficients in the 
                      z direction.
       Unit        : N/A
    - 1            : 
@@ -844,7 +844,7 @@
       Name        : CFZVXR
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Gas additive-friction-loss coefficients (-) in the 
+                     Gas additive-friction-loss coefficients in the 
                      r or x direction.
       Unit        : N/A
    - 1            : 
@@ -862,7 +862,7 @@
                      Input only if NAMELIST variable NFRC3 == 2.
       Description : > 
                      Liquid reverse-flow direction additive-friction-loss 
-                     coefficients (-) in the theta or y direction.
+                     coefficients in the theta or y direction.
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -879,7 +879,7 @@
                      Input only if NAMELIST variable NFRC3 == 2.
       Description : > 
                      Liquid reverse-flow direction additive-friction-loss 
-                     coefficients (-) in the z direction.
+                     coefficients in the z direction.
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -896,7 +896,7 @@
                      Input only if NAMELIST variable NFRC3 == 2.
       Description : > 
                      Liquid reverse-flow direction additive-friction-loss 
-                     coefficients (-) in the r or x direction.
+                     coefficients in the r or x direction.
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -913,7 +913,7 @@
                      Input only if NAMELIST variable NFRC3 == 2.
       Description : > 
                      Gas reverse-flow direction additive-friction-loss 
-                     coefficients (-) in the theta or y direction.
+                     coefficients in the theta or y direction.
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -930,7 +930,7 @@
                      Input only if NAMELIST variable NFRC3 == 2.
       Description : > 
                      Gas reverse-flow direction additive-friction-loss 
-                     coefficients (-) in the z direction.
+                     coefficients in the z direction.
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -947,7 +947,7 @@
                      Input only if NAMELIST variable NFRC3 == 2.
       Description : > 
                      Gas reverse-flow direction additive-friction-loss 
-                     coefficients (-) in the r or x direction.
+                     coefficients in the r or x direction.
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -981,7 +981,7 @@
       Dimension   : NTSX*NRSX
       Name        : FRVOL
       Note        : This is a VESSEL level card, repeat until NASX.
-      Description : Cell fluid-volume fractions (-) (0.0 <= VOL <= 1.0).
+      Description : Cell fluid-volume fractions (0.0 <= VOL <= 1.0).
       Unit        : N/A
    - 1            : 
       Value       : 0
@@ -995,7 +995,7 @@
       Name        : FRFAYT
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : > 
-                     Cell-edge flow-area fractions (-) in the theta or y 
+                     Cell-edge flow-area fractions in the theta or y 
                      direction (0.0 <= FRFAYT <= 1.0). 
       Unit        : N/A
    - 1            : 
@@ -1010,7 +1010,7 @@
       Name        : FRFAZ
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : >
-                     Cell-edge flow are fractions (-) in the z direction 
+                     Cell-edge flow are fractions in the z direction 
                      (0.0 <= FRFAZ <= 1.0).
       Unit        : N/A
    - 1            : 
@@ -1108,91 +1108,105 @@
 51:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : VVNZ
       Note        : This is a VESSEL level card, repeat until NASX.
-   - VVNZ         : 
+      Description : Initial gas velocities in the z direction.
+      Unit        : m.s^-1
+   - 1            : 
       Value       : 0
-      Description : Initial gas velocities (m.s^-1) in the z direction.
       Type        : E14.4
       Note        : N/A
 52:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : VVNXR
       Note        : This is a VESSEL level card, repeat until NASX.
-   - VVNXR        : 
+      Description : Initial gas velocities in the r or x direction.
+      Unit        : m.s^-1
+   - 1            : 
       Value       : 0
-      Description : Initial gas velocities (m.s^-1) in the r or x direction.
       Type        : E14.4
       Note        : N/A
 53:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : VLNYT
       Note        : This is a VESSEL level card, repeat until NASX.
-   - VLNYT        : 
+      Description : Initial liquid velocities in the theta or y direction.
+      Unit        : m.s^-1
+   - 1            : 
       Value       : 0
-      Description : > 
-                     Initial liquid velocities (m.s^-1) in the 
-                     theta or y direction.
       Type        : E14.4
       Note        : N/A
 54:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : VLNZ
       Note        : This is a VESSEL level card, repeat until NASX.
-   - VLNZ         : 
+      Description : Initial liquid velocities in the z direction.
+      Unit        : m.s^-1
+   - 1            : 
       Value       : 0
-      Description : Initial liquid velocities (m.s^-1) in the z direction.
       Type        : E14.4
       Note        : N/A
 55:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : VLNXR
       Note        : This is a VESSEL level card, repeat until NASX.
-   - VLNXR        : 
+      Description : Initial liquid velocities in the r or x direction.
+      Unit        : m.s^-1
+   - 1            : 
       Value       : 0
-      Description : Initial liquid velocities (m.s^-1) in the r or x direction.
       Type        : E14.4
       Note        : N/A
 56:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : TVN
       Note        : This is a VESSEL level card, repeat until NASX.
-   - TVN          : 
-      Value       : 0
       Description : Initial gas temperature (K).
+      Unit        : K
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 57:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : TLN
       Note        : This is a VESSEL level card, repeat until NASX.
-   - TLN          : 
+      Description : Initial liquid temperature.
+      Unit        : K
+   - 1            : 
       Value       : 0
-      Description : Initial liquid temperature (K).
       Type        : E14.4
       Note        : N/A
 58:
    - General      :
       Skipped     : False
-      Type        : Array
+      Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : PA
       Note        : This is a VESSEL level card, repeat until NASX.
-   - PN           : 
+      Description : Initial pressures.
+      Unit        : Pa
+   - 1            : 
       Value       : 0
-      Description : Initial pressures (Pa).
       Type        : E14.4
       Note        : N/A
 59:
@@ -1200,11 +1214,12 @@
       Skipped     : False
       Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : PAN
       Note        : This is a VESSEL level card, repeat until NASX.
-   - PAN          : 
-      Level       : 1
+      Description : Initial non-condensable-gas partial pressures.
+      Unit        : Pa
+   - 1            : 
       Value       : 0
-      Description : Initial non-condensable-gas partial pressures (Pa).
       Type        : E14.4
       Note        : N/A
 60:
@@ -1212,6 +1227,7 @@
       Skipped     : False
       Type        : Level
       Dimension   : NTSX*NRSX
+      Name        : ILEV
       Note        : This is a VESSEL level card, repeat until NASX.
       Description : >
                      1 = Indicates that the two-phase level exists in the 
@@ -1219,8 +1235,8 @@
                      0 = Indicates that the two-phase level does not exist 
                      in the current cell.
                      -1 = The level tracking will be turned off for this cell
-   - ILEV         : 
-      Level       : 1
+      Unit        : (-)
+   - 1            : 
       Value       : 0
       Type        : I14
       Note        : N/A
@@ -1235,7 +1251,8 @@
                      Input only if NAMELIST variable MWFL != 0.
       Description : >
                      Wall-friction multiplier factor for the liquid phase 
-                     in the theta or y direction (-) (0.9 <= VWFMLY <= 1.1).
+                     in the theta or y direction (0.9 <= VWFMLY <= 1.1).
+      Unit        : (-)
    - 1            : 
       Value       : 0
       Type        : E14.4
@@ -1249,11 +1266,12 @@
       Note        : >
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable MWFL != 0.
-   - 1            : 
-      Value       : 0
       Description : >
                      Wall-friction multiplier factor for the liquid phase 
-                     in the z direction (-) (0.9 <= VWFMLZ <= 1.1).
+                     in the z direction (0.9 <= VWFMLZ <= 1.1).
+      Unit        : (-)
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 63:
@@ -1267,7 +1285,8 @@
                      Input only if NAMELIST variable MWFL != 0.
       Description : >
                      Wall-friction multiplier factor for the liquid phase 
-                     in the r or x direction (-) (0.9 <= VWFMLX <= 1.1).
+                     in the r or x direction (0.9 <= VWFMLX <= 1.1).
+      Unit        : (-)
    - 1            : 
       Value       : 0
       Type        : E14.4
@@ -1281,11 +1300,12 @@
       Note        : >
                      This is a VESSEL level card, repeat until NASX.
                      Input only if NAMELIST variable MWFV != 0.
-   - 1            : 
-      Value       : 0
       Description : >
                      Wall-friction multiplier factor for the gas phase 
-                     in the theta or y direction (-) (0.9 <= VWFMVY <= 1.1).
+                     in the theta or y direction (0.9 <= VWFMVY <= 1.1).
+      Unit        : (-)
+   - 1            : 
+      Value       : 0
       Type        : E14.4
       Note        : N/A
 65:
@@ -1299,7 +1319,8 @@
                      Input only if NAMELIST variable MWFV != 0.
       Description : >
                      Wall-friction multiplier factor for the gas phase 
-                     in the theta or y direction (-) (0.9 <= VWFMVZ <= 1.1).
+                     in the theta or y direction (0.9 <= VWFMVZ <= 1.1).
+      Unit        : (-)
    - 1            : 
       Value       : 0
       Type        : E14.4
@@ -1315,7 +1336,8 @@
                      Input only if NAMELIST variable MWFV != 0.
       Description : >
                      Wall-friction multiplier factor for the gas phase 
-                     in the r or x direction (-) (0.9 <= VWFMVX <= 1.1).
+                     in the r or x direction (0.9 <= VWFMVX <= 1.1).
+      Unit        : (-)
    - 1            : 
       Value       : 0
       Type        : E14.4
